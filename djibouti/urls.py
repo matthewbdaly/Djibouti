@@ -49,6 +49,9 @@ urlpatterns = patterns('',
     # RSS feeds
     url(r'^feeds/posts/$', PostsFeed()),
 
+    # Search vacancies
+    url(r'^search', 'search.views.getSearchResults'),
+
     # Flat pages
     url(r'', include('django.contrib.flatpages.urls')),
 )

@@ -1,0 +1,25 @@
+{% include 'layout/header.html' %}
+    <h1>Posts</h1>
+    {% if posts %}
+    {% for post in posts %}
+    <div class="post">
+        <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+        {{ post.description|truncatewords:20 }}
+        <p>Posted {{ post.pub_date }}</p>
+        <p>
+        {% for category in post.categories.all %}
+            <a href="/category/{{ category.slug }}"><span class="label label-info">{{ category.title }}</span></a>
+        {% endfor %}
+        </p>
+    </div>
+    {% endfor %}
+    <ul class="pager">
+    {% if page.has_previous %}
+    <li><a href="/search?q={{ search_query }}&page={{ page.previous_page_number }}">Previous Page</a></li>
+    {% endif %}
+    {% if page.has_next %}
+    <li><a href="/search?q={{ search_query }}&page={{ page.next_page_number }}">Next Page</a></li>
+    {% endif %}
+    </ul>
+    {% endif %}
+{% include 'layout/footer.html' %}
