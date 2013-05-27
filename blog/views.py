@@ -36,4 +36,4 @@ class PostsFeed(Feed):
         return item.title
 
     def item_description(self, item):
-        return item.text
+        return item.html_text
