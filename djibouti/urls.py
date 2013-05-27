@@ -3,6 +3,7 @@ from django.views.generic import DetailView, ListView
 from blog.models import Category, Post
 from djibouti import settings
 from blog.views import PostsFeed
+from django.views.generic.base import RedirectView
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -17,7 +18,7 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Favicon
-    (r'^favicon\.ico$', 'django.views.generic.simple.redirect_to', {'url': '/static/images/favicon.ico'}),
+    (r'^favicon\.ico$', RedirectView.as_view(url='/static/images/favicon.ico')),
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
