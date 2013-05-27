@@ -8,3 +8,15 @@
     </head>
     <body>
         <div class="container"> 
+            {% load flatpages %}
+            {% get_flatpages as flatpages %}
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <ul class="nav">
+                        <li><a href="/">Home</a></li>
+                        {% for flatpage in flatpages %}
+                        <li><a href="{{ flatpage.url }}">{{ flatpage.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
