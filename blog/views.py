@@ -24,7 +24,7 @@ def getCategory(request, slug, page=1):
     return render_to_response('blog/category.html', {'posts': returned_page.object_list, 'page': returned_page, 'category': category})
 
 
-def PostsFeed(Feed):
+class PostsFeed(Feed):
     title = "My blog posts"
     link = "feeds/posts/"
     description = "Posts from my blog"
