@@ -2,6 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.views.generic import DetailView, ListView
 from blog.models import Category, Post
 from djibouti import settings
+from blog.views import PostsFeed
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
