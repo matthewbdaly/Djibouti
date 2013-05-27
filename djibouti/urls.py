@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.views.generic import DetailView, ListView
 from blog.models import Category, Post
+from djibouti import settings
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -36,6 +37,9 @@ urlpatterns = patterns('',
     # Individual categories
     url(r'^category/(?P<slug>[a-zA-Z0-9-]+)/?$', 'blog.views.getCategory'),
     url(r'^category/(?P<slug>[a-zA-Z0-9-]+)/?(?P<page>\d+)?/?$', 'blog.views.getCategory'),
+
+    # serve static
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 
     # Flat pages
     url(r'', include('django.contrib.flatpages.urls')),

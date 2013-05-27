@@ -131,6 +131,7 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     'south',
     'blog',
+    'gunicorn',
 )
 
 # A sample logging configuration. The only tangible logging
