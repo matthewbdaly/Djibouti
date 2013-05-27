@@ -49,7 +49,7 @@ urlpatterns = patterns('',
     # RSS feeds
     url(r'^feeds/posts/$', PostsFeed()),
 
-    # Search vacancies
+    # Search posts
     url(r'^search', 'search.views.getSearchResults'),
 
     # Flat pages
