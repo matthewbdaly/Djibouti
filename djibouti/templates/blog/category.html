@@ -9,7 +9,7 @@
         <p>Posted {{ post.pub_date }}</p>
         <p>
         {% for category in post.categories.all %}
-            <a href="/category/{{ category.slug }}">{{ category.title }}</a>
+            <a class="badge badge-info" href="/category/{{ category.slug }}">{{ category.title }}</a>
         {% endfor %}
         </p>
         </div>
@@ -17,10 +17,10 @@
         <br />
         <ul class="pager">
         {% if page_obj.has_previous %}
-            <li><a href="/{{ page_obj.previous_page_number }}/">Previous Page</a></li>
+            <li class="previous"><a href="/{{ page_obj.previous_page_number }}/">Previous Page</a></li>
         {% endif %}
         {% if page_obj.has_next %}
-            <li><a href="/{{ page_obj.next_page_number }}/">Next Page</a></li>
+            <li class="next"><a href="/{{ page_obj.next_page_number }}/">Next Page</a></li>
         {% endif %}
         </ul>
         {% else %}
