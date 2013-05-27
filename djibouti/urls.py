@@ -42,6 +42,9 @@ urlpatterns = patterns('',
     # serve static
     (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 
+    # RSS feeds
+    url(r'^feeds/posts/$', PostsFeed()),
+
     # Flat pages
     url(r'', include('django.contrib.flatpages.urls')),
 )
