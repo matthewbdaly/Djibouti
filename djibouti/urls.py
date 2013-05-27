@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.views.generic import DetailView, ListView
-from blog.models import Post
+from blog.models import Category, Post
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -27,6 +27,15 @@ urlpatterns = patterns('',
     url(r'^(?P<pub_date__year>\d{4})/(?P<pub_date__month>\d{1,2})/(?P<slug>[a-zA-Z0-9-]+)/?$', DetailView.as_view(
         model=Post,
         )),
+
+    # Category lists
+    url(r'^categories/?$', ListView.as_view(
+        model=Category,
+        )),
+
+    # Individual categories
+    url(r'^category/(?P<slug>[a-zA-Z0-9-]+)/?$', 'blog.views.getCategory'),
+    url(r'^category/(?P<slug>[a-zA-Z0-9-]+)/?(?P<page>\d+)?/?$', 'blog.views.getCategory'),
 
     # Flat pages
     url(r'', include('django.contrib.flatpages.urls')),

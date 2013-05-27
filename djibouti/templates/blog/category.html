@@ -1,15 +1,15 @@
         {% include 'layout/header.html' %}
         {% load markup %}
         <h1>My blog</h1>
-        {% if object_list %}
-        {% for post in object_list %}
+        {% if posts %}
+        {% for post in posts %}
         <div class="post">
         <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
         {{ post.text|markdown }}
         <p>Posted {{ post.pub_date }}</p>
         <p>
         {% for category in post.categories.all %}
-            <a href="/category/{{ category.slug }}/">{{ category.title }}</a>
+            <a href="/category/{{ category.slug }}">{{ category.title }}</a>
         {% endfor %}
         </p>
         </div>

@@ -1,13 +1,13 @@
         {% include 'layout/header.html' %}
         {% load markup %}
-        <h1>{{ flatpage.title }}</h1>
+        <h1>My blog</h1>
         <div class="post">
         <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
         {{ post.text|markdown }}
         <p>Posted {{ post.pub_date }}</p>
         <p>
         {% for category in post.categories.all %}
-            <a href="/category/{{ category.slug }}">{{ category.title }}</a>
+            <a href="/category/{{ category.slug }}/">{{ category.title }}</a>
         {% endfor %}
         </p>
         </div>
