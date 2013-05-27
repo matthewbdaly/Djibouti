@@ -1,14 +1,15 @@
 {% include 'layout/header.html' %}
     <h1>Posts</h1>
+    {% load markup %}
     {% if posts %}
     {% for post in posts %}
     <div class="post">
         <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
-        {{ post.description|truncatewords:20 }}
+        {{ post.text|markdown|truncatewords:20 }}
         <p>Posted {{ post.pub_date }}</p>
         <p>
         {% for category in post.categories.all %}
-            <a href="/category/{{ category.slug }}"><span class="label label-info">{{ category.title }}</span></a>
+        <a class="badge badge-info" href="/category/{{ category.slug }}">{{ category.title }}</a>
         {% endfor %}
         </p>
     </div>
