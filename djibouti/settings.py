@@ -132,6 +132,7 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     'south',
     'blog',
+    'search',
     'gunicorn',
 )
 
