@@ -1,8 +1,9 @@
         {% include 'layout/header.html' %}
+        {% load markup %}
         <h1>{{ flatpage.title }}</h1>
         <div class="post">
         <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
-        {{ post.text }}
+        {{ post.text|markdown }}
         </div>
         <br />
         {% if page_obj.has_previous %}

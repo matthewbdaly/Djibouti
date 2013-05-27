@@ -1,10 +1,11 @@
         {% include 'layout/header.html' %}
+        {% load markup %}
         <h1>{{ flatpage.title }}</h1>
         {% if object_list %}
         {% for post in object_list %}
         <div class="post">
         <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
-        {{ post.text }}
+        {{ post.text|markdown }}
         </div>
         {% endfor %}
         <br />
