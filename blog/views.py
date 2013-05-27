@@ -30,7 +30,7 @@ class PostsFeed(Feed):
     description = "Posts from my blog"
 
     def items(self):
-        return Post.objects[:5]
+        return Post.objects.all()[:5]
 
     def item_title(self, item):
         return item.title
