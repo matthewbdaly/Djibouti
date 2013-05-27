@@ -1,0 +1,5 @@
+venv/
+*.pyc
+backend.db
+.DS_Store
+*.swp
