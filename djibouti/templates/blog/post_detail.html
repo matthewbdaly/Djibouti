@@ -3,7 +3,7 @@
         <h1>My blog</h1>
         <div class="post">
         <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
-        {{ post.text|markdown }}
+        {{ post.html_text|markdown }}
         <p>Posted {{ post.pub_date }}</p>
         <p>
         {% for category in post.categories.all %}
