@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>My blog</title>
-    </head>
-    <body>
+        {% include 'layout/header.html' %}
+        <h1>{{ flatpage.title }}</h1>
         {% if object_list %}
         {% for post in object_list %}
         <div class="post">
@@ -23,5 +19,4 @@
         <p>No posts matched</p>
         </div>
         {% endif %}
-    </body>
-</html>
+        {% include 'layout/footer.html' %}
