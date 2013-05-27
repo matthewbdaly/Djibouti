@@ -5,6 +5,8 @@
         <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
         {{ post.text|markdown }}
         <p>Posted {{ post.pub_date }}</p>
+        <h2>Comments</h2>
+        <div class="fb-comments" data-href="http://blog.shellshocked.info" data-width="470" data-num-posts="10"></div>
         <p>
         {% for category in post.categories.all %}
             <a class="badge badge-info" href="/category/{{ category.slug }}/">{{ category.title }}</a>
