@@ -1,0 +1,15 @@
+        {% include 'layout/header.html' %}
+        <h1>{{ flatpage.title }}</h1>
+        <div class="post">
+        <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
+        {{ post.text }}
+        </div>
+        <br />
+        {% if page_obj.has_previous %}
+        <a href="/{{ page_obj.previous_page_number }}/">Previous Page</a>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <a href="/{{ page_obj.next_page_number }}/">Next Page</a>
+        {% endif %}
+        </div>
+        {% include 'layout/footer.html' %}
