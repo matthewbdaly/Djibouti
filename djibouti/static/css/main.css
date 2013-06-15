@@ -1,3 +1,12 @@
 pre {
     background-color: #000000;
 }
+
+blockquote {
+    background-color: #efefef;
+    padding: 20px;
+}
+
+blockquote p {
+    font-style: italic;
+}
