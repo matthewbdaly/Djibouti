@@ -22,6 +22,8 @@
             <div class="navbar-inner">
                 <ul class="nav">
                     <li><a href="/">Home</a></li>
+                    {% load flatpages %}
+                    {% get_flatpages as flatpages %}
                     {% for flatpage in flatpages %}
                     <li><a href="{{ flatpage.url }}">{{ flatpage.title }}</a></li>
                     {% endfor %}
@@ -39,8 +41,6 @@
 
 
         <div class="container"> 
-            {% load flatpages %}
-            {% get_flatpages as flatpages %}
             {% block content %}
             {% endblock %}
 
