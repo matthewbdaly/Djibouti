@@ -1,5 +1,7 @@
-        {% include 'layout/header.html' %}
+        {% extends 'layout/base.html' %}
+
+        {% block content %}
         {% load markup %}
         <h1>{{ flatpage.title }}</h1>
         {{ flatpage.content|markdown }}
-        {% include 'layout/footer.html' %}
+        {% endblock %}

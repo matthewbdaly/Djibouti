@@ -1,4 +1,6 @@
-        {% include 'layout/header.html' %}
+        {% extends 'layout/base.html' %}
+
+        {% block content %}
         {% load markup %}
         <h1>My blog</h1>
         {% if object_list %}
@@ -28,4 +30,5 @@
         <p>No posts matched</p>
         </div>
         {% endif %}
-        {% include 'layout/footer.html' %}
+
+        {% endblock %}

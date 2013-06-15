@@ -1,4 +1,6 @@
-{% include 'layout/header.html' %}
+{% extends 'layout/base.html' %}
+
+{% block content %}
     <h1>Posts</h1>
     {% load markup %}
     {% if posts %}
@@ -23,4 +25,4 @@
     {% endif %}
     </ul>
     {% endif %}
-{% include 'layout/footer.html' %}
+{% endblock %}

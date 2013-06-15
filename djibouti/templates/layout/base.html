@@ -40,3 +40,12 @@
                     </ul>
                 </div>
             </div>
+
+            {% block content %}
+            {% endblock %}
+
+        </div>
+        <script language="javascript" type="text/javascript" src="{% static 'components/jquery/jquery.min.js' %}"></script>
+        <script language="javascript" type="text/javascript" src="{% static 'components/bootstrap/docs/assets/js/bootstrap.min.js' %}"></script>
+    </body>
+</html>
