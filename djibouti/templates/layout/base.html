@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>My blog</title>
+        <title>Matthew Daly's blog</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% load staticfiles %}
         <link rel="stylesheet" type="text/css" href="{% static 'components/bootstrap/docs/assets/css/bootstrap.css' %}">
@@ -29,7 +29,7 @@
                     </a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li><a href="/">Home</a></li>
+                            <li><a class="brand" href="/">Home</a></li>
                             {% load flatpages %}
                             {% get_flatpages as flatpages %}
                             {% for flatpage in flatpages %}
