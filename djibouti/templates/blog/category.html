@@ -2,7 +2,9 @@
 
         {% block content %}
         {% load markup %}
-        <h1>My blog</h1>
+        <div class="page-header">
+            <h1>My blog</h1>
+        </div>
         {% if posts %}
         {% for post in posts %}
         <div class="post">

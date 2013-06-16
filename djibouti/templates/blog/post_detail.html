@@ -2,7 +2,9 @@
 
         {% block content %}
         {% load markup %}
-        <h1>My blog</h1>
+        <div class="page-header">
+            <h1>My blog</h1>
+        </div>
         <div class="post">
         <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
         {{ post.html_text|markdown }}
