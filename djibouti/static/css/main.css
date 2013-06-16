@@ -10,3 +10,7 @@ blockquote {
 blockquote p {
     font-style: italic;
 }
+
+ul.nav {
+    width: 100%;
+}
