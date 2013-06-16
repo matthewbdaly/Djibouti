@@ -11,6 +11,6 @@ blockquote p {
     font-style: italic;
 }
 
-ul.nav {
-    width: 100%;
+div.nav {
+    width: 75%;
 }
