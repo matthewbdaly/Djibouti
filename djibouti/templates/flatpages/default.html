@@ -1,7 +1,12 @@
         {% extends 'layout/base.html' %}
 
+        {% block header %}
+            <div class="page-header">
+                <h1>{{ flatpage.title }}</h1>
+            </div>
+        {% endblock %}
+
         {% block content %}
         {% load markup %}
-        <h1>{{ flatpage.title }}</h1>
         {{ flatpage.content|markdown }}
         {% endblock %}
