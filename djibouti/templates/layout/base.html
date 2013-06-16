@@ -58,10 +58,18 @@
             {% endblock %}
 
             <div class="row">
-            {% block content %}
-            {% endblock %}
+                {% block content %}
+                {% endblock %}
             </div>
 
+        </div>
+
+        <div class="container footer">
+            <div class="row">
+                <div class="span12">
+                    <p>Copyright &copy; Matthew Daly {% now "Y" %}</p>
+                </div>
+            </div>
         </div>
         <script language="javascript" type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script language="javascript" type="text/javascript" src="{% static 'components/bootstrap/docs/assets/js/bootstrap.min.js' %}"></script>
