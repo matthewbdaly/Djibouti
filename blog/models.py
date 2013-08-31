@@ -33,14 +33,11 @@ class Post(models.Model):
     class Meta:
         ordering = ["-pub_date"]
 
-
     def __unicode__(self):
         return self.title
 
-
     def get_absolute_url(self):
         return "/%s/%s/%s/" % (self.pub_date.year, self.pub_date.month, self.slug)
-
 
     def save(self):
         self.html_text = markdown(self.text, ['codehilite'])
