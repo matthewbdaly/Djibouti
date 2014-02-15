@@ -2,6 +2,10 @@ pre {
     background-color: #000000;
 }
 
+pre.line-numbers {
+    display: none;
+}
+
 blockquote {
     background-color: #efefef;
     padding: 20px;
